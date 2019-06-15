@@ -18,6 +18,11 @@ Function GetDuration(start As String, dest As String, key As String)
     ' Get the character position of the duration.
     charPos = InStr(objHTTP.responseText, """duration"" : {")
     If charPos = 0 Then GoTo ErrorHandl
+    
+    ' Check JSON element status.
+    Set regEx = CreateObject("VBScript.RegExp"): regEx.Pattern = "status"" : ""([^0-9""]*)""": regEx.Global = False
+    Set matches = regEx.Execute(objHTTP.responseText)
+    If matches(0).SubMatches(0) <> "OK" Then GoTo ErrorHandl
 
     ' Replace the string numbers after "duration" with their corresponding numeric values.
     Set regex = CreateObject("VBScript.RegExp"): regex.Pattern = "duration(?:.|\n)*?""value"".*?([0-9]+)": regex.Global = False
@@ -25,8 +30,8 @@ Function GetDuration(start As String, dest As String, key As String)
     tmpVal = Replace(matches(0).SubMatches(0), ".", Application.International(xlListSeparator))
     
     ' Return value.
-    GetDuration = CDbl(tmpVal)
+    GetDuration = CDbl(tmpVal)/60
     Exit Function
 ErrorHandl:
-    GetDistance = -1
+    GetDuration = ""
 End Function

@@ -1,7 +1,7 @@
 # Get Ideal Job Location 
 **Version 1.0.0** 
 
-> An Excel spreadsheet that determines what the ideal job locations would be for you.
+> An Excel spreadsheet that determines what ideal job locations would be for you.
 
 This speadsheet was designed to help you determine where to apply for jobs based on its proximity to existing placed of interest to you (family, church, etc.). It uses Google's Distance Matrix API to calculate the driving time between job sites and each place of interest.
 
@@ -80,7 +80,7 @@ https://maps.googleapis.com/maps/api/distancematrix/json?origins=richardson&dest
 }
 ```
 
-Then it uses a regex command to find the keyword "duration", and searches the following text for the first occurrence of the keyword "value" and isolates the numeric values directly following it into a capturing group, finally returning that group to the cell (in this case 1015).
+Then it uses a regex command to find the keyword "duration", and searches the following text for the first occurrence of the keyword "value", isolating the numeric values directly following it into a capturing group, finally returning that group to the cell (in this case 1015).
 
 ### Error handling
 
@@ -97,3 +97,14 @@ If you use a key that has not been activated, it may return the following JSON u
 ```
 
 When that happens, our regex will fail to produce a value associated with the keyword "value" because it doesn't exist. It will simply return 0. Make sure you use an active key to prevent this issue.
+
+If you use an invalid key, you will receive the following JSON and receive the same resulting 0:
+``` json
+{
+   "destination_addresses" : [],
+   "error_message" : "The provided API key is invalid.",
+   "origin_addresses" : [],
+   "rows" : [],
+   "status" : "REQUEST_DENIED"
+}
+```
