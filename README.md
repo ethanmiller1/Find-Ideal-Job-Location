@@ -1,6 +1,12 @@
 # Get Ideal Job Location 
 **Version 1.0.0** 
 
+<div align="center">
+    <a href="#usage"><img src="https://www.pinclipart.com/picdir/big/85-859147_google-maps-distance-matrix-api-travel-time-and.png" width="200px"></a>
+    <a href="#usage"><img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_Excel_2013_logo.svg" width="200px"></a>
+    <br>
+</div>
+
 > An Excel spreadsheet that determines what job locations would be ideal for you.
 
 This speadsheet was designed to help you determine where to apply for jobs based on its proximity to existing placed of interest to you (family, church, etc.). It uses Google's Distance Matrix API to calculate the driving time between job sites and each place of interest.
@@ -42,7 +48,7 @@ Note: you can only make 1 request to the web API per day without setting up a bi
 
 1. Determine which cities are ideal to apply for jobs in.
 
-This step is to give you an idea of which cities you want as you're browsing job openings on indeed.com.
+`=GetDuration([@City],Stedfast,KEY)` returns the number of minutes driving time it would take to get from the city of Sachse to Stedfast Baptist Church. ("Stedfast" is defined as "E Avenue J, Grand Prairie, TX 75050" in the "Key Metrics" sheet.)
 
 ![](https://github.com/king-melchizedek/Find-Ideal-Job-Location/raw/master/demos/cities.png)
 
