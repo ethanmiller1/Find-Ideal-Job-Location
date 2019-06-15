@@ -38,12 +38,32 @@ Note: you can only make 1 request to the web API per day without setting up a bi
 1. On [Google Cloud Platform](https://console.cloud.google.com), click `Activate` on the top right.
 1. Fill in your credit card information, and voila, your FREE API key is now activated.
 
+## Usage
+
+1. Determine which cities are ideal to apply for jobs in.
+
+This step is to give you an idea of which cities you want as you're browsing job openings on indeed.com.
+
+![](https://github.com/king-melchizedek/Find-Ideal-Job-Location/raw/master/demos/cities.png)
+
+(Note: [traveltimeplatform.com](https://app.traveltimeplatform.com/search/0_lng=-97.04434&0_color=%23eb9f22&0_mode=driving&0_title=East%20Avenue%20J%2C%20Grand%20Prairie%2C%20TX%2C%20USA&0_lat=32.76720&1_lng=-96.61390&1_color=%2339d2e2&1_mode=driving&1_title=Northlake%20Baptist%20Church%2C%20Garland%2C%20TX%2C%20USA&1_lat=32.92730&2_lat=33.04136&2_lng=-96.56308&2_title=1310%20Leeward%20Ln%2C%20Wylie%2C%20TX%2C%20USA&2_mode=driving "I dare you to click me.") can help you eyeball a custom list of cities to test within this spreadsheet.)
+
+2. Determine which companies take location priority.
+
+Once you've found a potential company, enter it's location into the "Jobs" spreadsheet to evaluate it.
+
+![](https://github.com/king-melchizedek/Find-Ideal-Job-Location/raw/master/demos/companies.png)
+
+3. Give your locations and key a defined name in Excel.
+
+![](https://github.com/king-melchizedek/Find-Ideal-Job-Location/raw/master/demos/metrics.png)
+
 ## How it works
 
 Our function takes in 3 parameters and concatenates them to generate a URL that will return a JSON object. Assuming the following usage:
 
 ``` excel
-=GetDuration("Richardson","Northlake Baptist Church",AIzaSyBI8NwkLl9986UkW4rL-UrZnASfhow8Yco)
+=GetDuration("Richardson","Northlake Baptist Church",AIzaSyB06tMOemrwtlMcat2ZKLPYGdFJ--BNJ7c)
 ```
 
 Our function would generate the following URL:
