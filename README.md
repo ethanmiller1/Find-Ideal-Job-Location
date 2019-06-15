@@ -1,7 +1,7 @@
 # Get Ideal Job Location 
 **Version 1.0.0** 
 
-> An Excel spreadsheet that determines what ideal job locations would be for you.
+> An Excel spreadsheet that determines what job locations would be ideal for you.
 
 This speadsheet was designed to help you determine where to apply for jobs based on its proximity to existing placed of interest to you (family, church, etc.). It uses Google's Distance Matrix API to calculate the driving time between job sites and each place of interest.
 
@@ -19,9 +19,8 @@ Now you should have a function called GetDuration() in your Excel workbook that 
 
 Example usage in cell:
 ``` excel
-=GetDuration("Richardson","1501 N Country Club Rd, Garland, TX 75040",KEY)/60
+=GetDuration("Richardson","1501 N Country Club Rd, Garland, TX 75040",KEY)
 ```
-(Divide by 60 to get in minutes.)
 
 ### Get your free Google Distance Matrix API Key
 
